@@ -161,7 +161,7 @@ const Profile = () => {
           </svg>
         </a>
         <a
-          href="https://twitter.com"
+          href="https://twitter.com/Bruxly_"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-400 hover:text-[#FFB400] transition-colors"
