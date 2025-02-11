@@ -35,7 +35,7 @@ const Profile = () => {
       {/* Profile Image */}
       <div className="relative w-[120px] md:w-[150px] h-[120px] md:h-[150px] mx-auto bg-[#1E1E1E] rounded-3xl p-2">
         <img
-          src="/assets/image.jpg"
+          src="/image.jpg"
           alt="Profile"
           className="w-full h-full rounded-2xl object-cover"
         />
