@@ -35,7 +35,7 @@ const Profile = () => {
       {/* Profile Image */}
       <div className="relative w-[120px] md:w-[150px] h-[120px] md:h-[150px] mx-auto bg-[#1E1E1E] rounded-3xl p-2">
         <img
-          src="/image.jpg"
+          src={import.meta.env.BASE_URL + 'image.jpg'}
           alt="Profile"
           className="w-full h-full rounded-2xl object-cover"
         />
@@ -107,8 +107,10 @@ const Profile = () => {
       {/* Download Resume Button */}
       <div className="flex justify-center">
         <a
-          href="/ManojResume.pdf"
-          download
+          href={import.meta.env.BASE_URL + 'ManojResume.pdf'}
+          download="ManojResume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-[#1E1E1E] text-gray-300 px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-medium hover:text-[#FFB400] hover:bg-[#1E1E1E]/80 transition-all duration-300 flex items-center gap-1.5 md:gap-2 border border-gray-800/50"
         >
           <svg 

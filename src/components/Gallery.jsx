@@ -6,21 +6,21 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: "/gallery/image1.jpg",
+      src: import.meta.env.BASE_URL + "gallery/image1.jpg",
       title: "Team Collaboration",
       category: "Hackthon",
       description: "Devathon 2nd-runner up"
     },
     {
       id: 2,
-      src: "/gallery/image2.jpg",
+      src: import.meta.env.BASE_URL + "gallery/image2.jpg",
       title: "Professional Headshot",
       category: "Portrait",
       description: "Professional headshot "
     },
     {
       id: 3,
-      src: "/gallery/image3.jpg",
+      src: import.meta.env.BASE_URL + "gallery/image3.jpg",
       title: "Speaking Event",
       category: "Events",
       description: "Technical presentation at college symposium"
