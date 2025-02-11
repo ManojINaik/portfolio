@@ -26,7 +26,8 @@ const Portfolio = () => {
       technologies: ["React", "TypeScript", "OpenAI API", "Firebase", "Tailwind CSS"],
       image: "/assets/ai-learning.jpg",
       links: {
-        github: "https://github.com/ManojINaik/Ai-learning"
+        github: "https://github.com/ManojINaik/Ai-learning",
+        live: "https://learningai.vercel.app/"
       }
     },
     {
