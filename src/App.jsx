@@ -6,6 +6,7 @@ import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
 import GitHub from './components/GitHub';
 import Contact from './components/Contact';
+import Gallery from './components/Gallery';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -30,6 +31,8 @@ function App() {
         return <Portfolio />;
       case 'github':
         return <GitHub />;
+      case 'gallery':
+        return <Gallery />;
       case 'contact':
         return <Contact />;
       default:
@@ -37,7 +40,7 @@ function App() {
     }
   };
 
-  const navItems = ['about', 'resume', 'portfolio', 'github', 'contact'];
+  const navItems = ['about', 'resume', 'portfolio', 'github', 'gallery', 'contact'];
 
   const handleNavClick = (section) => {
     setActiveSection(section);
