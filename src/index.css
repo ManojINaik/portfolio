@@ -4,6 +4,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Enable smooth scrolling globally */
+html {
+  scroll-behavior: smooth;
+}
+
+/* For Safari and other browsers that don't support scroll-behavior */
+@supports not (scroll-behavior: smooth) {
+  html {
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+  }
+}
+
+/* Custom smooth scroll for elements */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* For iOS devices */
+}
+
+/* Optimize scrolling performance */
+* {
+  -webkit-overflow-scrolling: touch; /* For iOS devices */
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 @layer utilities {
   .animate-fadeIn {
     animation: fadeIn 0.4s ease-out;
@@ -84,6 +121,71 @@
     transform: scaleX(1);
     transform-origin: left;
   }
+
+  /* Page Transitions */
+  .page-enter {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+
+  .page-enter-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.3s ease-out, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .page-exit {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .page-exit-active {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.99);
+    transition: opacity 0.3s ease-in, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Navigation Indicator Animation */
+  .nav-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #FFB400;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Content Fade Animation */
+  .animate-fadeIn {
+    animation: contentFade 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @keyframes contentFade {
+    0% {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Title Slide Animation */
+  .title-slide-in {
+    animation: titleSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes titleSlide {
+    0% {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }
 
 body {
@@ -103,17 +205,27 @@ body {
 
 ::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  border-radius: 8px;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+/* Horizontal scrollbar */
+::-webkit-scrollbar:horizontal {
+  height: 8px;
 }
 
 /* Smooth transitions for all interactive elements */
@@ -123,8 +235,42 @@ a, button {
 
 /* Glass effect for containers */
 .glass-effect {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background: rgba(42, 42, 42, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(42, 42, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth corners for containers */
+.glass-effect, 
+.glass-effect > *:first-child,
+.rounded-2xl,
+.rounded-3xl,
+.rounded-lg,
+.rounded-full {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Specific radius for different sizes */
+.rounded-lg {
+  border-radius: 12px;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+/* Navigation container specific styles */
+.glass-effect nav {
+  background: rgba(30, 30, 30, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Profile card specific styles */
+.bg-\[\#2A2A2A\] {
+  background: rgba(42, 42, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
 }
