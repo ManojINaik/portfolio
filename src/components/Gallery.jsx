@@ -6,21 +6,21 @@ const Gallery = () => {
   const galleryImages = [
     {
       id: 1,
-      src: import.meta.env.BASE_URL + "gallery/image1.jpg",
+      src: "/gallery/image1.jpg",
       title: "Team Collaboration",
       category: "Hackthon",
       description: "Devathon 2nd-runner up"
     },
     {
       id: 2,
-      src: import.meta.env.BASE_URL + "gallery/image2.jpg",
+      src: "/gallery/image2.jpg",
       title: "Professional Headshot",
       category: "Portrait",
       description: "Professional headshot "
     },
     {
       id: 3,
-      src: import.meta.env.BASE_URL + "gallery/image3.jpg",
+      src: "/gallery/image3.jpg",
       title: "Speaking Event",
       category: "Events",
       description: "Technical presentation at college symposium"
@@ -75,7 +75,7 @@ const Gallery = () => {
           {filteredImages.map((image) => (
             <div
               key={image.id}
-              className="group relative bg-[#2A2A2A] rounded-xl overflow-hidden cursor-pointer"
+              className="group relative bg-[#2A2A2A] rounded-xl overflow-hidden cursor-pointer hover:transform hover:scale-105 transition-all duration-300"
               onClick={() => setSelectedImage(image)}
             >
               <div className="aspect-square">
@@ -83,6 +83,7 @@ const Gallery = () => {
                   src={image.src}
                   alt={image.title}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
