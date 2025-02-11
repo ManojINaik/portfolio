@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Profile from './components/Profile';
 import About from './components/About';
 import Resume from './components/Resume';
@@ -139,6 +140,7 @@ function App() {
           </main>
         </div>
       </div>
+      <Analytics />
     </div>
   );
 }
