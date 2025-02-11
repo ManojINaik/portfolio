@@ -38,8 +38,8 @@ const Contact = () => {
         </svg>
       ),
       title: 'Location',
-      value: 'Byndoor, Karnataka, India',
-      link: 'https://maps.google.com/?q=Byndoor,Karnataka'
+      value: 'Mangalore, Karnataka, India',
+      link: 'https://maps.google.com/?q=Mangalore,Karnataka'
     }
   ];
 
