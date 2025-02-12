@@ -113,7 +113,7 @@ const Profile = () => {
       {/* Download Resume Button */}
       <div className="flex justify-center pt-1">
         <a
-          href={import.meta.env.BASE_URL + 'ManojResume.pdf'}
+          href={import.meta.env.BASE_URL + 'Manoj_Resume.pdf'}
           download="ManojResume.pdf"
           target="_blank"
           rel="noopener noreferrer"
