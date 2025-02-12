@@ -39,7 +39,7 @@ const Portfolio = () => {
       image: "/assets/ip-capture.jpg",
       links: {
         github: "https://github.com/ManojINaik/ip-capture",
-        live: null
+        live: "https://manojinaik.github.io/IPCAPTURE/"
       }
     }
   ];
