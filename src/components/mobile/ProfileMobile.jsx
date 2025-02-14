@@ -12,7 +12,7 @@ const ProfileMobile = () => {
       {/* Profile Image */}
       <div className="relative w-[120px] h-[120px] mx-auto bg-[#1E1E1E] rounded-3xl p-2.5">
         <img
-          src={import.meta.env.BASE_URL + 'image.jpg'}
+          src="./image.jpg"
           alt="Profile"
           className="w-full h-full rounded-2xl object-cover"
         />
@@ -84,7 +84,7 @@ const ProfileMobile = () => {
       {/* Download Resume Button */}
       <div className="flex justify-center pt-1">
         <a
-          href={import.meta.env.BASE_URL + 'ManojResume.pdf'}
+          href="./ManojResume.pdf"
           download="ManojResume.pdf"
           target="_blank"
           rel="noopener noreferrer"
