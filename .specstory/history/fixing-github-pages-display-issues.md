@@ -2341,7 +2341,140 @@ Let's also update the Profile component to use relative paths for images and res
 
 _****_
 
+```diff
+        <div className="relative w-[120px] md:w-[150px] h-[120px] md:h-[150px] mx-auto bg-[#1E1E1E] rounded-3xl p-2.5">
+          <img
+-           src={import.meta.env.BASE_URL + 'image.jpg'}
++           src="./image.jpg"
+            alt="Profile"
+            className="w-full h-full rounded-2xl object-cover"
+        <div className="flex justify-center pt-1">
+          <a
+-           href={import.meta.env.BASE_URL + 'Manoj_Resume.pdf'}
++           href="./Manoj_Resume.pdf"
+            download="ManojResume.pdf"
+            target="_blank"
+```
 
+---
+
+_****_
+
+
+
+
+
+And finally, let's update the mobile version of the Profile component:
+
+---
+
+_****_
+
+```diff
+        <div className="relative w-[120px] h-[120px] mx-auto bg-[#1E1E1E] rounded-3xl p-2.5">
+          <img
+-           src={import.meta.env.BASE_URL + 'image.jpg'}
++           src="./image.jpg"
+            alt="Profile"
+            className="w-full h-full rounded-2xl object-cover"
+        <div className="flex justify-center pt-1">
+          <a
+-           href={import.meta.env.BASE_URL + 'ManojResume.pdf'}
++           href="./ManojResume.pdf"
+            download="ManojResume.pdf"
+            target="_blank"
+```
+
+---
+
+_****_
+
+
+
+These changes should fix the white screen issue in your Vercel deployment. Here's what we changed:
+
+1. Updated `vite.config.js` to use `base: './'` instead of `/portfolio/`
+2. Changed all image and file paths to use relative paths (`./`) instead of `import.meta.env.BASE_URL`
+3. Made the changes consistent across both desktop and mobile Profile components
+4. Updated the Gallery component to use relative paths for images
+
+The white screen was likely occurring because the application couldn't find the assets with the `/portfolio/` base path in the Vercel deployment. Using relative paths and setting the base to `'./'` should resolve this issue.
+
+After making these changes:
+1. Commit and push your changes to your repository
+2. Vercel should automatically redeploy your site
+3. The white screen issue should be resolved
+
+Let me know if you need any further adjustments or if you encounter any other issues!
+
+---
+
+_**User**_
+
+commit and push
+
+---
+
+_**Assistant**_
+
+I'll help you commit and push the changes to your repository. Let me create a commit command with a descriptive message:
+
+---
+
+_****_
+
+```bash
+git add . && git commit -m "fix: update asset paths and base URL for Vercel deployment" && git push
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git add . && git commit -m "fix: updat
+e asset paths and base UR
+L for Vercel deployment" && git push
+                         At line:1 char:11
++ git add . && git commit -m "fix: update asset paths and base URL for  ...
++           ~~
+The token '&&' is not a valid statement separator in this version.
+At line:1 char:89
++ ... ix: update asset paths and base URL for Vercel deployment" && git pus ...
++                                                                ~~
+The token '&&' is not a valid statement separator in this version.
+    + FullyQualifiedErrorId : InvalidEndOfLine
+
+PS M:\portfolio\portfolio_website_xv9rb3>
+
+```
+
+---
+
+_****_
+
+
+
+I apologize for the error. It seems the PowerShell syntax is different. Let me try the commands separately:
+
+---
+
+_****_
+
+```bash
+git add .
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git add .
+warning: in the working copy of 'src/components/Gallery.jsx', LF will be replaced by CRLF the next time G
+
+
+
+
+
+
+
+
+
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
 
 ---
 
