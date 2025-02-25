@@ -2480,7 +2480,253 @@ PS M:\portfolio\portfolio_website_xv9rb3>
 
 _****_
 
+```bash
+git commit -m "fix: update asset paths and base URL for Vercel deployment"
+```
 
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git commit -m "fix: update asset paths and base URL for Vercel 
+deployment"
+[main a8a1813] fix: update asset paths and base URL for Vercel deployment
+ 6 files changed, 2419 insertions(+), 8 deletions(-)
+ create mode 100644 .specstory/history/.what-is-this.md
+ create mode 100644 .specstory/history/fixing-github-pages-display-issues.md
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
+
+---
+
+_****_
+
+```bash
+git push
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git push
+To github.com:ManojINaik/portfolio.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'github.com:ManojINaik/portfolio.git'
+hint: Updates were rejected because the remote contains work that you do not
+hint: have locally. This is usually caused by another repository pushing to
+hint: the same ref. If you want to integrate the remote changes, use
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
+
+---
+
+_****_
+
+
+
+It seems there are some changes in the remote repository that we don't have locally. Let's fetch and merge those changes first:
+
+---
+
+_****_
+
+```bash
+git pull --rebase
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git pull --rebase
+error: cannot pull with rebase: You have unstaged changes.
+error: Please commit or stash them.
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
+
+---
+
+_****_
+
+
+
+Let's check the status of our repository:
+
+---
+
+_****_
+
+```bash
+git status
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .specstory/history/fixing-github-pages-display-issues.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
+
+---
+
+_****_
+
+
+
+
+
+Let's add the remaining changes and create a new commit:
+
+---
+
+_****_
+
+```bash
+git add . && git commit -m "docs: update history file"
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git add . && git commit -m "docs: update history file"
+At line:1 char:11
++ git add . && git commit -m "docs: update history file"
++           ~~
+The token '&&' is not a valid statement separator in this version.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : InvalidEndOfLine
+
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
+
+---
+
+_****_
+
+
+
+
+
+I apologize for the PowerShell syntax issues. Let's do it step by step:
+
+---
+
+_****_
+
+```bash
+git add .
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git add .
+warning: in the working copy of '.specstory/history/.what-is-this.md', LF will be replaced by CRLF the ne
+
+
+
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
+
+---
+
+_****_
+
+```bash
+git commit -m "docs: update history file"
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git commit -m "docs: update history file"
+[main 0ecc253] docs: update history file
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
+
+---
+
+_****_
+
+
+
+
+
+Now let's fetch and rebase with the remote changes:
+
+---
+
+_****_
+
+```bash
+git fetch origin
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git fetch origin
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (2/2), 874 bytes | 218.00 KiB/s, done.
+From github.com:ManojINaik/portfolio
+   b23c58b..a83e0ea  main       -> origin/main
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
+
+---
+
+_****_
+
+```bash
+git rebase origin/main
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git rebase origin/main
+Successfully rebased and updated refs/heads/main.
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
+
+---
+
+_****_
+
+
+
+
+
+
+
+Now we can push our changes:
+
+---
+
+_****_
+
+```bash
+git push origin main
+```
+
+```
+PS M:\portfolio\portfolio_website_xv9rb3> git push origin main
+Enumerating objects: 26, done.
+Counting objects: 100% (26/26), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (18/18), 20.28 KiB | 4.05 MiB/s, done.
+Total 18 (delta 10), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (10/10), completed with 7 local objects.
+To github.com:ManojINaik/portfolio.git
+   a83e0ea..010bdab  main -> main
+PS M:\portfolio\portfolio_website_xv9rb3>
+```
+
+---
+
+_****_
+
+
+
+Great! All changes have been successfully committed and pushed to your repository. The changes include:
+
+1. Updated base URL configuration in `vite.config.js`
+2. Fixed asset paths in Gallery and Profile components
+3. Updated documentation in the history files
 
 ---
 
